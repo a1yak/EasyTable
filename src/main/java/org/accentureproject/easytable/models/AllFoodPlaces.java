@@ -1,4 +1,4 @@
-package org.accentureproject.easytable.models;
+package main.java.org.accentureproject.easytable.models;
 
 import java.util.*;
 // тут коллекции со всеми типами общепита, у каждого типа общепита своя коллекция со списком из заведений,

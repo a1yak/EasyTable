@@ -1,4 +1,4 @@
-package org.accentureproject.easytable.models;
+package main.java.org.accentureproject.easytable.models;
 
 public enum FoodPlaceType {
     RESTAURANT,
