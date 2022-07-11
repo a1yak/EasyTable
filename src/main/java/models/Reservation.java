@@ -6,16 +6,28 @@ import java.util.Date;
 public class Reservation {
     private static int RESERVATION_ID;
     private Person person;
-    private FoodPlace foodPlace;
+
     private Date reservationDate;
     private Date reservationTime;
-    private boolean isReservationPerformed;
 
-    public Reservation(Person person, FoodPlace foodPlace, Date reservationDate, Date reservationTime, boolean isReservationPerformed) {
+    public void setPerson(Person person) {
         this.person = person;
-        this.foodPlace = foodPlace;
+    }
+
+    public void setReservationDate(Date reservationDate) {
         this.reservationDate = reservationDate;
+    }
+
+    public void setReservationTime(Date reservationTime) {
         this.reservationTime = reservationTime;
-        this.isReservationPerformed = isReservationPerformed;
+    }
+
+    public Reservation(Person person, Date reservationDate, Date reservationTime) {
+        this.person = person;
+        this.reservationDate = reservationDate;
+    }
+
+
+    public Reservation() {
     }
 }
