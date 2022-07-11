@@ -7,10 +7,9 @@ import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.zip.DataFormatException;
+
 
 // тут пока тестируется примитивная логика в консоли.
 public class Main {
@@ -20,6 +19,11 @@ public class Main {
         FoodPlace placeForReservation;
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d.MM.yyyy");
         SimpleDateFormat simpleTimeFormat = new SimpleDateFormat("k:m");
+
+        Person person;
+        Date reservationDate;
+        Date reservationTime;
+        Reservation reservation = new Reservation();
         boolean exists = false;
 
         System.out.println("Please choose which food place type you are interested in");
@@ -41,12 +45,12 @@ public class Main {
 
         exists = false;
         do {
-            System.out.println("Please choose  place from the list");
+            System.out.println("Please choose place from the list");
             line = reader.readLine();
 
             for (FoodPlace foodPlace : nameOfPlaces) {
                 if (line.equalsIgnoreCase(foodPlace.getFoodPlaceName())) {
-                    placeForReservation = foodPlace;// присваиваем выбранное заведение новой переменной, чтоб потом заполнить ей поля
+                    foodPlace.addReservationToTheList(reservation);// Добавляем резервацию в список всех резереваций этого заведения
                     System.out.println("Please choose reservation date(dd.mm.yyyy) and time(hh:mm):");//формат часов 24
                     exists = true;
                     break;
@@ -59,14 +63,15 @@ public class Main {
         exists=true;
         do {
             try {
+                // добавляем в объект Reservation поля
                 System.out.print("Date: ");
-                line = reader.readLine();
-                Date date = simpleDateFormat.parse(line);
-                System.out.println(date.toString());
+                reservationDate = simpleDateFormat.parse(reader.readLine());
+                reservation.setReservationDate(reservationDate);
+                System.out.println(reservationDate.toString());
                 System.out.print("Time: ");
-                line = reader.readLine();
-                Date time = simpleTimeFormat.parse(line);
-                if(date!=null&&time!=null) {
+                reservationTime = simpleTimeFormat.parse(reader.readLine());
+                reservation.setReservationTime(reservationTime);
+                if(reservationDate!=null&&reservationTime!=null) {
                     exists = true;
                 }
          }catch (ParseException ex){
@@ -74,8 +79,24 @@ public class Main {
                 exists = false;
             }
         } while (!exists);
-        System.out.println("Succesful reservation, Have a great time!!");
+        // добавляем в объект Person поля
+
+        System.out.print("Please enter your Name: ");
+        String name = reader.readLine();
+        System.out.print("Please enter your Surname: ");
+        String surname = reader.readLine();
+        System.out.print("Please enter your Email: ");
+        String email = reader.readLine();
+
+        person = new Person(name,surname,email);
+        reservation.setPerson(person);
+        System.out.println("Done");
+
+
+
+        System.out.println("Successful reservation, Have a great time!!");
         //короче потом переменные даты и времени засовываются в конструктор объекта Reservation со всеми остальными полями
         // и данными о человеке, который сделал резервацию
+
     }
 }
