@@ -1,4 +1,4 @@
-package main.java.org.accentureproject.easytable.models;
+package models;
 
 import java.util.Date;
 
