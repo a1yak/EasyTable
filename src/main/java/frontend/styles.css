@@ -4,12 +4,14 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 padding: 0;
 margin: 0;
 color: #333;
+background: url("./images/background.jpg") center ;
 }
+
 
 
 h1,h2,h4,h5,h6
 {
-    align-items: center;
+   
     margin: 0;
     z-index: 1000;
     padding-left: 15px;
@@ -19,6 +21,12 @@ h3{
     font: sans;
     font-weight: 100;
     font-style:italic ;
+}
+
+b{
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 a{
@@ -54,8 +62,9 @@ object{
 
 .container{
     width: 100%;
+    max-width: 1200px;
     height: 100vh;
-    background: url("./images/background.jpg") center no-repeat;
+    margin: 0 auto;
     -webkit-background-size: cover;
     background-size: cover;
 }
@@ -80,6 +89,10 @@ object{
     font-size: 18px;  
 }
 
+img{
+    padding-right: 25px;
+}
+
 .nav_link{
     color: #333;
     font-weight: bold;
@@ -91,4 +104,40 @@ object{
 
 .greatings{
     padding-top: 100px;
+}
+
+
+.place{
+    margin-top: 20px;
+    max-width: 900px;
+    max-height: 135px;
+    display: flex;
+   text-align: left;
+    
+    background-color: beige;
+}
+
+.btnhome{
+    display: inline-block;
+    padding: 0 15px;
+    color: aliceblue;
+}
+
+.slider{
+max-width: 900px;
+width: 100%;
+height: 80px;
+background: url(./images/green-slate.jpg);
+ display: flex;
+ margin-top: 15px;
+
+ justify-content: center;
+}
+
+.slideritem{
+    font-size: larger;
+    margin-top: 20px;
+    padding: 0 50px;
+    color: aliceblue;
+    
 }
