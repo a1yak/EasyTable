@@ -1,6 +1,5 @@
-package models;
+package com.example.easytableapp.Models;
 
-import java.sql.Time;
 import java.util.Date;
 
 public class Reservation {

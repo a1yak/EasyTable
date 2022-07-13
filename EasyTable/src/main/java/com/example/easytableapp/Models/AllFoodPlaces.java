@@ -1,4 +1,4 @@
-package models;
+package com.example.easytableapp.Models;
 
 import java.util.*;
 // тут коллекции со всеми типами общепита, у каждого типа общепита своя коллекция со списком из заведений,
@@ -21,26 +21,26 @@ public class AllFoodPlaces {
 
         //Множество общепита вида - Cafe
         setOfCafe = new TreeSet<>();
-        setOfCafe.addAll(Arrays.asList(new FoodPlace("Cafe1",FoodPlaceType.CAFE),
-                new FoodPlace("Cafe2",FoodPlaceType.CAFE),
-                new FoodPlace("Cafe3", FoodPlaceType.CAFE)));
+        setOfCafe.addAll(Arrays.asList(new FoodPlace("CafeName1",FoodPlaceType.CAFE),
+                new FoodPlace("CafeName2",FoodPlaceType.CAFE),
+                new FoodPlace("CafeName3", FoodPlaceType.CAFE)));
 
         //бары
         setOfBars = new TreeSet<>();
-        setOfBars.addAll(Arrays.asList(new FoodPlace("Bar1",FoodPlaceType.BAR),
-                new FoodPlace("Bar2",FoodPlaceType.BAR),new FoodPlace("Bar3",FoodPlaceType.BAR)));
+        setOfBars.addAll(Arrays.asList(new FoodPlace("BarName1",FoodPlaceType.BAR),
+                new FoodPlace("BarName2",FoodPlaceType.BAR),new FoodPlace("BarName3",FoodPlaceType.BAR)));
 
         //рестораны
         setOfRestaurants = new TreeSet<>();
-        setOfRestaurants.addAll(Arrays.asList(new FoodPlace("Restaurant1", FoodPlaceType.RESTAURANT),
-                new FoodPlace("Restaurant2", FoodPlaceType.RESTAURANT),
-                new FoodPlace("Restaurant3", FoodPlaceType.RESTAURANT)));
+        setOfRestaurants.addAll(Arrays.asList(new FoodPlace("RestaurantName1", FoodPlaceType.RESTAURANT),
+                new FoodPlace("RestaurantName2", FoodPlaceType.RESTAURANT),
+                new FoodPlace("RestaurantName3", FoodPlaceType.RESTAURANT)));
 
         //кальяны
         setOfHookah = new TreeSet<>();
-        setOfHookah.addAll(Arrays.asList(new FoodPlace("Hookah1",FoodPlaceType.HOOKAH_BAR),
-                new FoodPlace("Hookah2",FoodPlaceType.HOOKAH_BAR),
-                new FoodPlace("Hookah3",FoodPlaceType.HOOKAH_BAR)));
+        setOfHookah.addAll(Arrays.asList(new FoodPlace("HookahName1",FoodPlaceType.HOOKAH_BAR),
+                new FoodPlace("HookahName2",FoodPlaceType.HOOKAH_BAR),
+                new FoodPlace("HookahName3",FoodPlaceType.HOOKAH_BAR)));
 
 
         //Мапа, где ключ - вид общепита, а значение - множества конкретного типа общепита.

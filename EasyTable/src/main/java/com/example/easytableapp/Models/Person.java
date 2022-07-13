@@ -1,4 +1,4 @@
-package models;
+package com.example.easytableapp.Models;
 
 import java.util.Date;
 

@@ -1,7 +1,7 @@
-package models;
+package com.example.easytableapp.Models;
 
-import java.sql.Time;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FoodPlace implements Comparable<FoodPlace> {
     private String foodPlaceName;
