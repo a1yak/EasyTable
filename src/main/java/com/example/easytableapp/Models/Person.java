@@ -1,12 +1,36 @@
 package com.example.easytableapp.Models;
 
+import org.springframework.lang.NonNull;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
+@Entity
 public class Person {
-    private static int ID;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int ID;
+
+    @NotBlank(message = "Please enter your name")
+    @Size(min = 2, max = 30, message = "Name should be between 2 and 30 characters")
     private String name;
+
+    @NotBlank(message = "Please enter your name")
+    @Size(min = 2, max = 30, message = "Surname should be between 2 and 30 characters")
     private String surname;
+
     private Date birthDate;
+
+    @Email
     private String email;
 
 
@@ -25,12 +49,16 @@ public class Person {
         this.email = email;
     }
 
-    public static int getID() {
+    public Person() {
+
+    }
+
+    public int getID() {
         return ID;
     }
 
-    public static void setID(int ID) {
-        Person.ID = ID;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getName() {
