@@ -1,5 +1,6 @@
 package com.example.easytableapp.Models;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -28,10 +29,16 @@ public class Person {
     @Size(min = 2, max = 30, message = "Surname should be between 2 and 30 characters")
     private String surname;
 
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    @Column(columnDefinition = "date")
     private Date birthDate;
 
-    @Email
+    @Email(message="Please enter validate email")
+    @NotBlank (message = "Please enter your email")
     private String email;
+
+    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
+    private Reservation reservation;
 
 
     public Person(String name, String surname, Date birthDate, String email) {

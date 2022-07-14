@@ -1,12 +1,38 @@
 package com.example.easytableapp.Models;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 public class Reservation {
-    private static int RESERVATION_ID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @OneToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "person_id")
     private Person person;
 
+    public Person getPerson() {
+        return person;
+    }
+
+    public Date getReservationDate() {
+        return reservationDate;
+    }
+
+    public Date getReservationTime() {
+        return reservationTime;
+    }
+
+    @DateTimeFormat(pattern = "dd.mm")
+    @Column(columnDefinition = "date")
     private Date reservationDate;
+
+    @DateTimeFormat(pattern = "hh:mm")
     private Date reservationTime;
 
     public void setPerson(Person person) {
@@ -21,6 +47,8 @@ public class Reservation {
         this.reservationTime = reservationTime;
     }
 
+
+    @Autowired
     public Reservation(Person person, Date reservationDate, Date reservationTime) {
         this.person = person;
         this.reservationDate = reservationDate;
