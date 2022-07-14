@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class FoodPlacesController {
 
-    @GetMapping("/")
-    public String home(Model model) {
-        return "hello";
-    }
+//    @GetMapping("/")
+//    public String home(Model model) {
+//        return "hello";
+//    }
 
 
 }
