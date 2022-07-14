@@ -2,19 +2,23 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
     <title>Reservation Form</title>
 </head>
 <body>
-Please enter reservation date and time:
+    <div class="intro">
+<h4>Please, enter reservation date and time:</h4>
 <br/>
-
+<div class="form">
 <form th:method="POST" th:action="@{/reservation}" th:object="${reservation}">
     <label for="date">Enter date: </label>
+    <br/>
     <input type="text" th:field="*{reservationDate}" id="date"/>
     <br/>
     <label for="time">Enter time: </label>
+    <br/>
     <input type="text" th:field="*{reservationTime}" id="time"/>
-
+</div>
 <!--    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>-->
 <!--    <br/>-->
 <!--    <label for="surname">Enter surname: </label>-->
@@ -29,7 +33,10 @@ Please enter reservation date and time:
 <!--    <input type="text" th:field="*{email}" id="email"/>-->
 <!--    <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>-->
 <!--    <br/>-->
-    <input type="submit" value="Create!"/>
+    <div class="submitbtn">
+        <a href="new.html"><input type="submit" value="SUBMIT"/></a>
+    </div>
+    </div>
 </form>
 </body>
 </html>

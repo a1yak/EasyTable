@@ -34,6 +34,4 @@ public class ReservationController {
         return "redirect:/people";
     }
 
-
-
 }
