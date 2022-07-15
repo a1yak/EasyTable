@@ -32,6 +32,15 @@ public class Reservation {
     @Temporal(TemporalType.DATE)
     private Date reservationDate;
 
+
+    public Reservation(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     @DateTimeFormat(pattern = "HH:mm")
     @Temporal(TemporalType.TIME)
     private Date reservationTime;
@@ -50,9 +59,10 @@ public class Reservation {
 
 
     @Autowired
-    public Reservation(Person person, Date reservationDate, Date reservationTime) {
-        this.person = person;
+    public Reservation(Date reservationDate, Date reservationTime) {
+        this.person = new Person();
         this.reservationDate = reservationDate;
+        this.reservationTime = reservationTime;
     }
 
 

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 @Transactional
 public class ReservationService {
@@ -19,5 +21,9 @@ public class ReservationService {
 
     public void addReservation(Reservation reservation) {
         reservationRepository.save(reservation);
+    }
+    public Reservation findById(int id){
+        Optional<Reservation> found = reservationRepository.findById(id);
+        return found.orElse(null);
     }
 }

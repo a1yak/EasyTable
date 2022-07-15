@@ -1,6 +1,7 @@
 package com.example.easytableapp.Controllers;
 
 import com.example.easytableapp.Models.Reservation;
+import com.example.easytableapp.Service.PersonService;
 import com.example.easytableapp.Service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ReservationController {
 
     private final ReservationService reservationService;
+
 
     @Autowired
     public ReservationController(ReservationService reservationService) {
@@ -31,7 +33,7 @@ public class ReservationController {
     @PostMapping()
     public String createReservation(@ModelAttribute Reservation reservation) {
         reservationService.addReservation(reservation);
-        return "redirect:/people";
+        return "redirect:/people/new";
     }
 
 }
