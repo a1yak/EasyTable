@@ -32,7 +32,7 @@ public class Reservation {
     @Temporal(TemporalType.DATE)
     private Date reservationDate;
 
-    @DateTimeFormat(pattern = "hh:mm")
+    @DateTimeFormat(pattern = "HH:mm")
     @Temporal(TemporalType.TIME)
     private Date reservationTime;
 
