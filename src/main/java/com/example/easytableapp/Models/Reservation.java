@@ -28,11 +28,12 @@ public class Reservation {
         return reservationTime;
     }
 
-    @DateTimeFormat(pattern = "dd.mm")
-    @Column(columnDefinition = "date")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Temporal(TemporalType.DATE)
     private Date reservationDate;
 
     @DateTimeFormat(pattern = "hh:mm")
+    @Temporal(TemporalType.TIME)
     private Date reservationTime;
 
     public void setPerson(Person person) {

@@ -29,8 +29,8 @@ public class Person {
     @Size(min = 2, max = 30, message = "Surname should be between 2 and 30 characters")
     private String surname;
 
-    @DateTimeFormat(pattern = "dd.MM.yyyy")
-    @Column(columnDefinition = "date")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Temporal(TemporalType.DATE)
     private Date birthDate;
 
     @Email(message="Please enter validate email")
