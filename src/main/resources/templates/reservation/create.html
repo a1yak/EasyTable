@@ -14,10 +14,12 @@
     <label for="date">Enter date: </label>
     <br/>
     <input type="text" th:field="*{reservationDate}" id="date"/>
+    <div style="color:red" th:if="${#fields.hasErrors('reservationDate')}" th:errors="*{reservationDate}">Date error</div>
     <br/>
     <label for="time">Enter time: </label>
     <br/>
     <input type="text" th:field="*{reservationTime}" id="time"/>
+    <div style="color:red" th:if="${#fields.hasErrors('reservationTime')}" th:errors="*{reservationTime}">Time error</div>
 </div>
 <!--    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>-->
 <!--    <br/>-->

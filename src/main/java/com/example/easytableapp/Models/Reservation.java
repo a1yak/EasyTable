@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -30,6 +32,7 @@ public class Reservation {
 
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Temporal(TemporalType.DATE)
+    @NotNull(message = "Please enter date")
     private Date reservationDate;
 
 
@@ -43,6 +46,7 @@ public class Reservation {
 
     @DateTimeFormat(pattern = "HH:mm")
     @Temporal(TemporalType.TIME)
+    @NotNull(message = "Please enter time")
     private Date reservationTime;
 
     public void setPerson(Person person) {
