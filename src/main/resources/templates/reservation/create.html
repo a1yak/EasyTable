@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/table.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&display=swap" rel="stylesheet">
     <title>Reservation Form</title>
 </head>
 <body>
+
+    <header class="header">
+        <div class="header_inner">
+            <object data="mesa.svg" width="60px" height="60px">
+            </object>
+            <a class="btnhome" href="index.html"><h1>Easy table</h1></a>
+        </div>
+    </header>
     <div class="intro">
-<h4>Please, enter reservation date and time:</h4>
-<br/>
+        <br/>
+<p class="p2">Please, enter reservation date and time:</p>
 <div class="form">
 <form th:method="POST" th:action="@{/reservation}" th:object="${reservation}">
-    <label for="date">Enter date: </label>
     <br/>
-    <input type="text" th:field="*{reservationDate}" id="date"/>
+    <input type="text" th:field="*{reservationDate}" id="date" placeholder="Pick your date:"/>
     <div style="color:red" th:if="${#fields.hasErrors('reservationDate')}" th:errors="*{reservationDate}">Date error</div>
     <br/>
-    <label for="time">Enter time: </label>
     <br/>
-    <input type="text" th:field="*{reservationTime}" id="time"/>
+    <input type="text" th:field="*{reservationTime}" id="time" placeholder="Pick your time:"/>
     <div style="color:red" th:if="${#fields.hasErrors('reservationTime')}" th:errors="*{reservationTime}">Time error</div>
 </div>
 <!--    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>-->
@@ -36,6 +46,7 @@
 <!--    <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>-->
 <!--    <br/>-->
     <div class="submitbtn">
+        <br/>
         <a href="new.html"><input type="submit" value="SUBMIT"/></a>
     </div>
     </div>
