@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+    <link href="templatecss.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="images/table.ico">
     <title>Add client</title>
 </head>
@@ -15,9 +15,8 @@
         </div>
     </header>
 
-<div class="container" height = 600px width="1200px">
-    <h2>Add client</h2>
-    <hr/>
+<div class="containeradd">
+<div class="inneradd">
     <h3>Please enter your personal information</h3>
     <br/>
     <form th:method="POST" th:action="@{/people}" th:object="${person}">
@@ -36,47 +35,8 @@
         <button class = "btn btn-primary" type="submit">Add client</button>
     </form>
 </div>
-<div class="footer"><br/>@2022 Easy Table</div>
-</body>
-</html>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" type="image/x-icon" href="images/table.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    <title>Easy Table</title>
-</head>
-
-<body>
-
-<header class="header">
-    <div class="header_inner">
-        <object data="mesa.svg" width="60px" height="60px">
-        </object>
-        <a class="btnhome" href="index.html"><h1>Easy table</h1></a>
-    </div>
-</header>
-
-
-<div class="intro">
-    <div class="inner">
-        <p class="psuccess">Successful reservation, have a great time</p>
-
-        <a class="btn" href="index.html">Home Page</a>
-
-    </div>
-
-
 </div>
-<div class="footer"><br/>@2022 Easy Table</div>
-
+    <div class="footer"><p>@2022 Easy Table</p></div>
 </body>
-
 </html>
+

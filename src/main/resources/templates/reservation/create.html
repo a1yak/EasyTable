@@ -31,26 +31,13 @@
     <input type="text" th:field="*{reservationTime}" id="time" placeholder="Pick your time:"/>
     <div style="color:red" th:if="${#fields.hasErrors('reservationTime')}" th:errors="*{reservationTime}">Time error</div>
 </div>
-<!--    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>-->
-<!--    <br/>-->
-<!--    <label for="surname">Enter surname: </label>-->
-<!--    <input type="text" th:field="*{surname}" id="surname"/>-->
-<!--    <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">surname error</div>-->
-<!--    <br/>-->
-<!--    <label for="birthDate">Enter birthday in mm.dd.yyyy format(OPTIONAL): </label>-->
-<!--    <input type="text" th:field="*{birthDate}" id="birthDate"/>-->
-<!--    <div  style="color: red" th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}">birtday error</div>-->
-<!--    <br/>-->
-<!--    <label for="email">Enter email: </label>-->
-<!--    <input type="text" th:field="*{email}" id="email"/>-->
-<!--    <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>-->
-<!--    <br/>-->
+
     <div class="submitbtn">
         <br/>
         <a href="new.html"><input type="submit" value="SUBMIT"/></a>
     </div>
     </div>
 </form>
-<div class="footer"><br/>@2022 Easy Table</div>
+    <div class="footer"><p>@2022 Easy Table</p></div>
 </body>
 </html>
