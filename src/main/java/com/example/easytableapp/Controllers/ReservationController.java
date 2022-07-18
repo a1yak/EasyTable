@@ -1,11 +1,10 @@
 package com.example.easytableapp.Controllers;
 
 import com.example.easytableapp.Models.Reservation;
-import com.example.easytableapp.Service.PersonService;
 import com.example.easytableapp.Service.ReservationService;
+import com.example.easytableapp.util.ReservationValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,11 +18,13 @@ import javax.validation.Valid;
 public class ReservationController {
 
     private final ReservationService reservationService;
+    private final ReservationValidation reservationValidation;
 
 
     @Autowired
-    public ReservationController(ReservationService reservationService) {
+    public ReservationController(ReservationService reservationService, ReservationValidation reservationValidation) {
         this.reservationService = reservationService;
+        this.reservationValidation = reservationValidation;
     }
 
 
@@ -34,6 +35,7 @@ public class ReservationController {
 
     @PostMapping()
     public String createReservation(@ModelAttribute @Valid Reservation reservation, BindingResult bindingresult) {
+        reservationValidation.validate(reservation, bindingresult);
         if(bindingresult.hasErrors()) return "reservation/create";
         reservationService.addReservation(reservation);
         return "redirect:/people/new/"+ reservation.getId();
