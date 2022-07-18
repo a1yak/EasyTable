@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all" href="styles.css" th:href="@{/styles.css}">
-    <link rel="shortcut icon" type="image/x-icon" href="images/table.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/table.ico">
     <title>Add client</title>
 </head>
 <body>
 <header class="header">
     <div class="header_inner">
-        <object data="mesa.svg" width="60px" height="60px">
+        <object data="/mesa.svg" width="60px" height="50px">
         </object>
-        <a class="btnhome" href="index.html"><h1>Easy table</h1></a>
+        <a class="btnhome" href="/index.html"><h1>Easy table</h1></a>
     </div>
 </header>
 
@@ -19,7 +19,7 @@
     <div class="inneradd">
         <h3>Please enter your personal information</h3>
         <br/>
-        <form th:method="POST" th:action="@{/people}" th:object="${person}">
+        <form th:method="POST" th:action="@{/people/new/{id}(id=${resId})}" th:object="${person}">
             <input type="text" th:field="*{name}" placeholder="Enter name" class="form-control col-4 mb-4" id="name"/>
             <div class="error" style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
             <br/>
@@ -33,7 +33,10 @@
             <div class="error" style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
             <br/>
             <br/>
-            <button class = "btn btn-primary" type="submit">Add client</button>
+            <div class="submitbtn">
+                <br/>
+                <a href="/successfullreservation.html"><input type="submit" value="SUBMIT"/></a>
+            </div>
         </form>
     </div>
 </div>
