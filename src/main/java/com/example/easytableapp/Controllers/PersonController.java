@@ -1,7 +1,6 @@
 package com.example.easytableapp.Controllers;
 
 import com.example.easytableapp.Models.Person;
-import com.example.easytableapp.Models.Reservation;
 import com.example.easytableapp.Service.PersonService;
 import com.example.easytableapp.Service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +16,13 @@ import javax.validation.Valid;
 public class PersonController {
 
     private final PersonService personService;
+    private final ReservationService reservationService;
 
 
     @Autowired
-    public PersonController(PersonService personService) {
+    public PersonController(PersonService personService, ReservationService reservationService) {
         this.personService = personService;
+        this.reservationService = reservationService;
     }
 
     @GetMapping()
@@ -30,14 +31,18 @@ public class PersonController {
         return "people/show";
     }
 
-    @GetMapping("/new")
-    public String newPerson(@ModelAttribute("person") Person person){
+    @GetMapping("/new/{id}")
+    public String newPerson(@ModelAttribute Person person, Model model,
+                            @PathVariable int id){
+        model.addAttribute("resId", id);
         return "people/new";
     }
 
-    @PostMapping()
-    public String addPeople(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult){
+    @PostMapping("/new/{id}")
+    public String addPeople(@ModelAttribute @Valid Person person, BindingResult bindingResult,
+                            @PathVariable int id){
         if(bindingResult.hasErrors()) return "people/new";
+        reservationService.findById(id).setPerson(person);
         personService.addPerson(person);
         return "people/successfullreservation";
     }

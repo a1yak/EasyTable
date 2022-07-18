@@ -19,7 +19,7 @@
     <div class="inneradd">
         <h3>Please enter your personal information</h3>
         <br/>
-        <form th:method="POST" th:action="@{/people}" th:object="${person}">
+        <form th:method="POST" th:action="@{/people/new/{id}(id=${resId})}" th:object="${person}">
             <input type="text" th:field="*{name}" placeholder="Enter name" class="form-control col-4 mb-4" id="name"/>
             <div class="error" style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
             <br/>

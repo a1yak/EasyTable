@@ -28,8 +28,7 @@ public class ReservationController {
 
 
     @GetMapping()
-    public String reservationForm(Model model) {
-        model.addAttribute("reservation", new Reservation());
+    public String reservationForm(@ModelAttribute Reservation reservation) {
         return "reservation/create";
     }
 
@@ -37,7 +36,7 @@ public class ReservationController {
     public String createReservation(@ModelAttribute @Valid Reservation reservation, BindingResult bindingresult) {
         if(bindingresult.hasErrors()) return "reservation/create";
         reservationService.addReservation(reservation);
-        return "redirect:/people/new";
+        return "redirect:/people/new/"+ reservation.getId();
     }
 
 }
