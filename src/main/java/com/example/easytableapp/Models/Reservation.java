@@ -6,6 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.time.LocalTime;
 import java.util.Date;
 
 @Entity
@@ -26,7 +27,7 @@ public class Reservation {
         return reservationDate;
     }
 
-    public Date getReservationTime() {
+    public LocalTime getReservationTime() {
         return reservationTime;
     }
 
@@ -45,9 +46,8 @@ public class Reservation {
     }
 
     @DateTimeFormat(pattern = "HH:mm")
-    @Temporal(TemporalType.TIME)
     @NotNull(message = "Please enter time")
-    private Date reservationTime;
+    private LocalTime reservationTime;
 
     public void setPerson(Person person) {
         this.person = person;
@@ -57,13 +57,13 @@ public class Reservation {
         this.reservationDate = reservationDate;
     }
 
-    public void setReservationTime(Date reservationTime) {
+    public void setReservationTime(LocalTime reservationTime) {
         this.reservationTime = reservationTime;
     }
 
 
     @Autowired
-    public Reservation(Date reservationDate, Date reservationTime) {
+    public Reservation(Date reservationDate, LocalTime reservationTime) {
         this.person = new Person();
         this.reservationDate = reservationDate;
         this.reservationTime = reservationTime;
