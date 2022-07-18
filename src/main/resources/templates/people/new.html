@@ -2,41 +2,41 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link href="templatecss.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css" th:href="@{/styles.css}">
     <link rel="shortcut icon" type="image/x-icon" href="images/table.ico">
     <title>Add client</title>
 </head>
 <body>
-    <header class="header">
-        <div class="header_inner">
-            <object data="mesa.svg" width="60px" height="60px">
-            </object>
-            <a class="btnhome" href="index.html"><h1>Easy table</h1></a>
-        </div>
-    </header>
+<header class="header">
+    <div class="header_inner">
+        <object data="mesa.svg" width="60px" height="60px">
+        </object>
+        <a class="btnhome" href="index.html"><h1>Easy table</h1></a>
+    </div>
+</header>
 
 <div class="containeradd">
-<div class="inneradd">
-    <h3>Please enter your personal information</h3>
-    <br/>
-    <form th:method="POST" th:action="@{/people}" th:object="${person}">
-        <input type="text" th:field="*{name}" placeholder="Enter name" class="form-control col-4 mb-4" id="name"/>
-        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+    <div class="inneradd">
+        <h3>Please enter your personal information</h3>
         <br/>
-        <input type="text" th:field="*{surname}" placeholder="Enter surname" class="form-control col-4 mb-4" id="surname"/>
-        <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">surname error</div>
-        <br/>
-        <input type="text" th:field="*{birthDate}" placeholder="Enter birthdate in mm.dd.yyyy format(OPTIONAL)" class="form-control col-4 mb-4" id="birthDate"/>
-        <div  style="color: red" th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}">birthday error</div>
-        <br/>
-        <input type="text" th:field="*{email}" placeholder="Enter email" class="form-control col-4 mb-4" id="email"/>
-        <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
-        <br/>
-        <button class = "btn btn-primary" type="submit">Add client</button>
-    </form>
+        <form th:method="POST" th:action="@{/people}" th:object="${person}">
+            <input type="text" th:field="*{name}" placeholder="Enter name" class="form-control col-4 mb-4" id="name"/>
+            <div class="error" style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+            <br/>
+            <input type="text" th:field="*{surname}" placeholder="Enter surname" class="form-control col-4 mb-4" id="surname"/>
+            <div class="error" style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">surname error</div>
+            <br/>
+            <input type="text" th:field="*{birthDate}" placeholder="Enter birthdate in mm.dd.yyyy format(OPTIONAL)" class="form-control col-4 mb-4" id="birthDate"/>
+            <div class="error" style="color: red" th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}">birthday error</div>
+            <br/>
+            <input type="text" th:field="*{email}" placeholder="Enter email" class="form-control col-4 mb-4" id="email"/>
+            <div class="error" style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
+            <br/>
+            <br/>
+            <button class = "btn btn-primary" type="submit">Add client</button>
+        </form>
+    </div>
 </div>
-</div>
-    <div class="footer"><p>@2022 Easy Table</p></div>
+<div class="footer"><p>@2022 Easy Table</p></div>
 </body>
 </html>
-

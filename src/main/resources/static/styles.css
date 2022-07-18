@@ -7,8 +7,6 @@ color: #333;
 background: url("images/background.jpg") center ;
 }
 
-
-
 h1,h2,h4,h6
 {
    
@@ -256,3 +254,6 @@ font-family: 'Dancing Script', cursive;
     bottom: 0px;
 }
 
+.error{
+    font-size: medium;
+}
