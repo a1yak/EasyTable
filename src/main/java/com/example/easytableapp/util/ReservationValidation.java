@@ -30,10 +30,11 @@ public class ReservationValidation implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         Reservation reservation = (Reservation) target;
-        LocalTime time = reservation.getReservationTime().truncatedTo(ChronoUnit.SECONDS);
 
 
-        if(reservationRepository.findByReservationTime(reservation.getReservationTime())!=null) {
+        if(reservationRepository.findByReservationTimeAndReservationDate(reservation.getReservationTime(),
+                reservation.getReservationDate())!=null) {
+            errors.rejectValue("reservationDate","","");
             errors.rejectValue("reservationTime","","This time is reserved");
         }
 
