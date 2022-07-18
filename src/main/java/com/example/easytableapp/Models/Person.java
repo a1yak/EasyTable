@@ -41,6 +41,10 @@ public class Person {
     private Reservation reservation;
 
 
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
+    }
+
     public Person(String name, String surname, Date birthDate, String email) {
         ++ID;
         this.name = name;

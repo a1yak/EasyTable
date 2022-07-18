@@ -10,7 +10,7 @@ public class FoodPlacesController {
 
 //    @GetMapping("/")
 //    public String home(Model model) {
-//        return "hello";
+//        return "static/index";
 //    }
 
 

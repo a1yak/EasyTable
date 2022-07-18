@@ -1,13 +1,11 @@
 body
 {
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, 'American Typewriter', serif;
 padding: 0;
 margin: 0;
 color: #333;
 background: url("images/background.jpg") center ;
 }
-
-
 
 h1,h2,h4,h6
 {
@@ -17,11 +15,13 @@ h1,h2,h4,h6
     padding-left: 15px;
 }
 
+
 h3{
     font: sans;
     font-weight: 100;
     font-style:italic ;
 }
+
 
 h5{
     padding-top: 100px;
@@ -33,6 +33,10 @@ b{
     padding-top: 10px;
     font-size: 20px;
     font-weight: bold;
+}
+
+p{
+    padding-left: 50px;
 }
 
 a{
@@ -70,10 +74,8 @@ object{
 .container{
     width: 100%;
     max-width: 1200px;
-    height: 100vh;
     margin: 0 auto;
-    -webkit-background-size: cover;
-    background-size: cover;
+
 }
 
 .intro{
@@ -132,13 +134,13 @@ img{
 }
 
 .slider{
-max-width: 900px;
 width: 100%;
-height: 80px;
+height: 70px;
 background: url(images/green-slate.jpg);
  display: flex;
  margin-top: 15px;
-
+position: relative;
+bottom: 0px;
  justify-content: center;
 }
 
@@ -150,9 +152,9 @@ background: url(images/green-slate.jpg);
 }
 
 .inner{
-
+font-family: 'Dancing Script', cursive;
     height: 600px;
-    margin:180px auto;
+    margin:100px auto;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -182,11 +184,6 @@ background: url(images/green-slate.jpg);
     transform: translateY(4px);
   }
 
-  .submitbtn{
-  
-
-  }
-
   input[type=text] {
     width: 30%;
     padding: 12px 20px;
@@ -209,6 +206,54 @@ background: url(images/green-slate.jpg);
   input[type=submit]:hover {
     background-color: #45a049;
   }
-  
 
+  .containeradd{
+    margin-top: 50px;
+    width: 100%;
+   
+   
+  }
 
+  .inneradd{
+   
+    margin:100px auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 1500px;
+   
+  }
+
+   .p2{
+  font-family: 'Edu TAS Beginner', cursive;
+   }
+
+   .psuccess{
+    font-family: 'Dancing Script', cursive;
+    padding-top: 200px;
+   }
+
+   .ref{
+    font-size: larger;
+    margin-top: 20px;
+    position: absolute;
+    left: 50px;
+    color: aliceblue;
+   }
+
+.footer{
+    background: url(images/green-slate.jpg);
+    height: 60px;
+    width: 100%;
+    display: flex;
+    font-size: larger;
+    align-items: center;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+}
+
+.error{
+    font-size: medium;
+}
