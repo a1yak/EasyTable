@@ -33,7 +33,10 @@
             <div class="error" style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
             <br/>
             <br/>
-            <button class = "btn btn-primary" type="submit">Add client</button>
+            <div class="submitbtn">
+                <br/>
+                <a href="/successfullreservation.html"><input type="submit" value="SUBMIT"/></a>
+            </div>
         </form>
     </div>
 </div>
