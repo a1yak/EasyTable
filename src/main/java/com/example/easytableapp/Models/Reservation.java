@@ -32,7 +32,7 @@ public class Reservation {
         return reservationTime;
     }
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @NotNull(message = "Please enter date")
     private LocalDate reservationDate;
 
