@@ -45,7 +45,7 @@ public class Reservation {
         return id;
     }
 
-    @DateTimeFormat(pattern = "HH:mm")
+//    @DateTimeFormat(pattern = "HH")
     @NotNull(message = "Please enter time")
     private LocalTime reservationTime;
 
