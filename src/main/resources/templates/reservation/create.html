@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&display=swap" rel="stylesheet">
     <title>Reservation Form</title>
 </head>
-<body class="bodycreate">
+<body>
 
     <header class="header">
         <div class="header_inner">
@@ -19,16 +19,22 @@
         </div>
     </header>
     <div class="intro">
-        <br/>
+
 <p class="p2">Please, enter reservation date and time:</p>
 <div class="form">
 <form th:method="POST" th:action="@{/reservation}" th:object="${reservation}">
     <br/>
-    <input type="text" th:field="*{reservationDate}" id="date" placeholder="Pick your date:"/>
-    <div class="error" style="color:red" th:if="${#fields.hasErrors('reservationDate')}" th:errors="*{reservationDate}">Date error</div>
+    <div class="label"><label >Pick your date:</label>
+       <select th:object="${reservation}" th:field="*{reservationDate}" id="date">
+            <option th:each="pickerDate : ${datePicker}"
+                    th:value="${pickerDate.getDate()}"
+                    th:text="${pickerDate.getShortDate()}"></option>
+        </select></div>
+    <!--<input type="text" th:field="*{reservationDate}" id="date" placeholder="Pick your date:"/>
+    <div class="error" style="color:red" th:if="${#fields.hasErrors('reservationDate')}" th:errors="*{reservationDate}">Date error</div>-->
     <br/>
     <br/>
-    <div class="label"><label for ="reservation">Pick your time:</label>
+    <div class="label"><label >Pick your time:</label>
     <select th:object="${reservation}" th:field="*{reservationTime}" id="reservation" >
         <option th:each="picker : ${timePicker}"
                 th:value="${picker.getLongTime()}"
