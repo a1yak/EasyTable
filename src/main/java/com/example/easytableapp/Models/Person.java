@@ -30,7 +30,6 @@ public class Person {
     private String surname;
 
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    @Temporal(TemporalType.DATE)
     private Date birthDate;
 
     @Email(message="Please enter validate email")
@@ -46,7 +45,6 @@ public class Person {
     }
 
     public Person(String name, String surname, Date birthDate, String email) {
-        ++ID;
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
@@ -54,7 +52,6 @@ public class Person {
     }
 
     public Person(String name, String surname, String email) {
-        ++ID;
         this.name = name;
         this.surname = surname;
         this.email = email;
