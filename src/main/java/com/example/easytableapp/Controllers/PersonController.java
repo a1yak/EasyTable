@@ -43,12 +43,13 @@ public class PersonController {
 
     @PostMapping("/{id}")
     public String addPeople(@ModelAttribute @Valid Person person, BindingResult bindingResult,
-                            Model model,
+                            Model model,Model model1,
                             @PathVariable int id){
         model.addAttribute("resId", id);
         if(bindingResult.hasErrors()) return "people/new";
         reservationService.findById(id).setPerson(person);
         personService.addPerson(person);
+        model1.addAttribute("res",reservationService.findById(id));
         return "people/successfullreservation";
     }
 }

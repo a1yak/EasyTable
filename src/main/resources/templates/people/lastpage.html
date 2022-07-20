@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+</head>
+<body>
+
+<div>
+    <a th:text="${'Congratulations ' + person.getName() + ' ' + person.getSurname() + '!'}">text1</a>
+    <br/>
+    <a th:text="${'Your reservation in ' +
+    res.getFoodPlace().getTitle() + ' at ' + res.getReservationDate() + ', ' + res.getReservationTime() + ' was successful!'}"> text2</a>
+</div>
+
+</body>
+</html>

@@ -1,10 +1,12 @@
 body
 {
+
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, 'American Typewriter', serif;
 padding: 0;
 margin: 0;
 color: #333;
 background: url("images/background.jpg") center ;
+
 }
 
 h1,h2,h4,h6
@@ -270,7 +272,7 @@ font-family: 'Dancing Script', cursive;
     font-size: larger;
     align-items: center;
     color: white;
-    position: absolute;
+    position: fixed;
     bottom: 0px;
 }
 
