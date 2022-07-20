@@ -38,9 +38,11 @@ public class PersonController {
         return "people/new";
     }
 
-    @PostMapping("/new/{id}")
+    @PostMapping("/{id}")
     public String addPeople(@ModelAttribute @Valid Person person, BindingResult bindingResult,
+                            Model model,
                             @PathVariable int id){
+        model.addAttribute("resId", id);
         if(bindingResult.hasErrors()) return "people/new";
         reservationService.findById(id).setPerson(person);
         personService.addPerson(person);
