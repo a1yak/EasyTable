@@ -3,25 +3,20 @@ package com.example.easytableapp.Controllers;
 import com.example.easytableapp.Models.DatePicker;
 import com.example.easytableapp.Models.Reservation;
 import com.example.easytableapp.Models.TimePicker;
+import com.example.easytableapp.Service.FoodPlaceService;
 import com.example.easytableapp.Service.ReservationService;
 import com.example.easytableapp.util.ReservationValidation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.datetime.DateFormatter;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,12 +26,14 @@ public class ReservationController {
 
     private final ReservationService reservationService;
     private final ReservationValidation reservationValidation;
+    private final FoodPlaceService foodPlaceService;
 
 
     @Autowired
-    public ReservationController(ReservationService reservationService, ReservationValidation reservationValidation) {
+    public ReservationController(ReservationService reservationService, ReservationValidation reservationValidation, FoodPlaceService foodPlaceService) {
         this.reservationService = reservationService;
         this.reservationValidation = reservationValidation;
+        this.foodPlaceService = foodPlaceService;
     }
 
 
@@ -83,13 +80,18 @@ public class ReservationController {
         return listOfDates;
     }
 
-    @GetMapping()
-    public String reservationForm(@ModelAttribute Reservation reservation) {
+    @GetMapping("/{id}")
+    public String reservationForm(@ModelAttribute Reservation reservation, Model model,
+                                  @PathVariable int id) {
+        model.addAttribute("placeId", id);
         return "reservation/create";
     }
 
-    @PostMapping()
-    public String createReservation(@ModelAttribute @Valid Reservation reservation, BindingResult bindingresult) {
+    @PostMapping("/{id}")
+    public String createReservation(@ModelAttribute @Valid Reservation reservation, BindingResult bindingresult,
+                                    @PathVariable int id, Model model) {
+        model.addAttribute("placeId", id);
+        reservation.setFoodPlace(foodPlaceService.findById(id));
         reservationValidation.validate(reservation, bindingresult);
         if(bindingresult.hasErrors()) return "reservation/create";
         reservationService.addReservation(reservation);

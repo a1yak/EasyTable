@@ -32,8 +32,8 @@ public class ReservationValidation implements Validator {
         Reservation reservation = (Reservation) target;
 
 
-        if(reservationRepository.findByReservationTimeAndReservationDate(reservation.getReservationTime(),
-                reservation.getReservationDate())!=null) {
+        if(reservationRepository.findByReservationTimeAndReservationDateAndFoodPlaceId(reservation.getReservationTime(),
+                reservation.getReservationDate(),reservation.getFoodPlace().getId())!=null) {
             errors.rejectValue("reservationDate","","");
             errors.rejectValue("reservationTime","","This time is reserved");
         }

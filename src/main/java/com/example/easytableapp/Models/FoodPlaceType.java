@@ -1,29 +1,33 @@
 package com.example.easytableapp.Models;
 
-public enum FoodPlaceType {
-    RESTAURANT,
-    BAR,
-    CAFE,
-    HOOKAH_BAR;
+import javax.persistence.*;
+import java.util.List;
+@Entity
+public class FoodPlaceType {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String type;
+    @OneToMany
+    private List<FoodPlace> foodPlace;
 
-    public static FoodPlaceType[] getFoodPlaceType(){
-        return new FoodPlaceType[]{RESTAURANT,BAR,CAFE,HOOKAH_BAR};
+    public FoodPlaceType(String type, List<FoodPlace> foodPlace) {
+        this.type = type;
+        this.foodPlace = foodPlace;
     }
 
-    //получаем Enum по строке
-    public static FoodPlaceType getKey(String s){
-        for (FoodPlaceType fpt : getFoodPlaceType()) {
-            if (fpt.toString().equalsIgnoreCase(s)) {
-                return fpt;
-            }
-        }
-        return null;
+    public FoodPlaceType() {
     }
-    //сравниваем Enum со строкой, независиво от регистра букв
-    public static boolean checkEnum(String s) {
-        for(FoodPlaceType fpt : getFoodPlaceType()) {
-            if (fpt.toString().equalsIgnoreCase(s)) return true;
-        }
-        return false;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public List<FoodPlace> getFoodPlace() {
+        return foodPlace;
     }
 }

@@ -22,7 +22,7 @@
         
 <p class="p2">Please, enter reservation date and time:</p>
 <div class="form">
-<form th:method="POST" th:action="@{/reservation}" th:object="${reservation}">
+<form th:method="POST" th:action="@{/reservation/{id}(id=${placeId})}" th:object="${reservation}">
     <br/>
     <div class="label"><label >Pick your date:</label>
        <select th:object="${reservation}" th:field="*{reservationDate}" id="date">
