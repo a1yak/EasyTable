@@ -63,6 +63,29 @@ public class ReservationController {
         return list;
     }
 
+    @ModelAttribute("datePicker")
+    public List<DatePicker> pickDate(){
+        List<DatePicker> listOfDates = new ArrayList<>();
+        DateTimeFormatter customFormatter = DateTimeFormatter.ISO_LOCAL_DATE;
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(1).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(1).toString(), customFormatter)));
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(2).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(2).toString(), customFormatter)));
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(3).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(3).toString(), customFormatter)));
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(4).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(4).toString(), customFormatter)));
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(5).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(5).toString(), customFormatter)));
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(6).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(6).toString(), customFormatter)));
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(7).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(7).toString(), customFormatter)));
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(8).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(8).toString(), customFormatter)));
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(9).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(9).toString(), customFormatter)));
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(10).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(10).toString(), customFormatter)));
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(11).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(11).toString(), customFormatter)));
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(12).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(12).toString(), customFormatter)));
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(13).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(13).toString(), customFormatter)));
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(14).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(14).toString(), customFormatter)));
+        listOfDates.add(new DatePicker(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(15).toString(), LocalDate.parse(LocalDate.now(ZoneId.of("Europe/Paris")).plusDays(15).toString(), customFormatter)));
+
+        return listOfDates;
+    }
+
     @GetMapping()
     public String reservationForm(@ModelAttribute Reservation reservation) {
         return "reservation/create";
