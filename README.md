@@ -10,7 +10,7 @@ Accenture Java Bootcamp Summer 2022 final project
 
 **Database diagram:**
 
-![image](https://user-images.githubusercontent.com/69860749/179977914-66eb0971-d2fb-49e4-bc29-976a4e851bcf.png)
+![image](https://user-images.githubusercontent.com/69860749/180080324-4b95f866-3d7c-48a3-961d-b86cbeda7a70.png)
 
 ## 🎥 Demonstration
 
@@ -50,6 +50,6 @@ Accenture Java Bootcamp Summer 2022 final project
 
 This project is not licensed
 
-## ❔ HElP
+## ❔ HELP
 
 alyak.grt@gmail.com
