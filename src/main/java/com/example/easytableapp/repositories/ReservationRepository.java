@@ -11,5 +11,5 @@ public interface ReservationRepository extends JpaRepository<Reservation, Intege
 
     Reservation findByReservationTime(LocalTime reservationTime);
 
-    Reservation findByReservationTimeAndReservationDate(LocalTime reservationTime, LocalDate reservationDate);
+    Reservation findByReservationTimeAndReservationDateAndFoodPlaceId(LocalTime reservationTime, LocalDate reservationDate, int foodPlaceId);
 }

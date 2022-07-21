@@ -47,7 +47,7 @@ a{
 
 select{
     height: 37px;
-    width: 75px;
+    width: 105px;
     padding-bottom: 5px;
 }
 
@@ -87,26 +87,59 @@ object{
     padding:0 10px;
 }
 
+.containerextra{
+    display: flex;
+    flex-direction: column;
+    height: 95vh
+}
+
+.introindex{
+    padding: 20px;
+  margin-top: 50px;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;   
+    flex: auto;
+}
+
 .container{
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-
 }
 
 .intro{
-   
+    margin-top: 50px;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;   
+}
+
+.introextra{
     margin-top: 50px;
     font-size: 50px;
     font-weight: bold;
     text-align: center;
-    
+    display: flex;
+  flex-direction: column;
+  height: 95vh;
+}
+
+.introcreate{
+    margin-top: 50px;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+  flex-direction: column;
+  height: 90vh;
 }
 
 .typesofplaces{
     margin-top: 200px;
     display: flex;
     justify-content: center;
+    flex: auto;
 
 }
 
@@ -130,11 +163,17 @@ img{
 
 .greatings{
     padding-top: 100px;
+    padding: 20px;
+  margin-top: 50px;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;   
 }
 
 
 .bodycreate{
     
+    height: 95vh;
 }
 
 .place{
@@ -175,12 +214,19 @@ bottom: 0px;
 font-family: 'Dancing Script', cursive;
     height: 600px;
     margin:100px auto;
+    font-size: 50px;
+    font-weight: bold;
     align-items: center;
     justify-content: center;
     text-align: center;
     width: 100%;
     max-width: 800px;
     background: url("https://i.pinimg.com/originals/4c/65/f9/4c65f913798dcd566fb929d0973a37e6.jpg");
+    flex: auto;
+}
+
+.submitbtn{
+    flex: auto;
 }
 
 .btn {
@@ -194,6 +240,7 @@ font-family: 'Dancing Script', cursive;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
+    
   }
   
   .btn:hover {background-color: #3e8e41}
@@ -230,8 +277,9 @@ font-family: 'Dancing Script', cursive;
   .containeradd{
     margin-top: 50px;
     width: 100%;
-   
-   
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
   }
 
   .inneradd{
@@ -242,7 +290,7 @@ font-family: 'Dancing Script', cursive;
     text-align: center;
     width: 100%;
     max-width: 1500px;
-   
+   flex: auto;
   }
 
    .p2{
@@ -267,11 +315,10 @@ font-family: 'Dancing Script', cursive;
     height: 60px;
     width: 100%;
     display: flex;
-    font-size: larger;
+    font-size: 20px;
     align-items: center;
     color: white;
-    position: absolute;
-    bottom: 0px;
+    flex: 0 0 auto;
 }
 
 .error{

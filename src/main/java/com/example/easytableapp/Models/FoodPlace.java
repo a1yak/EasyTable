@@ -1,37 +1,70 @@
 package com.example.easytableapp.Models;
 
-import java.util.HashSet;
-import java.util.Set;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.util.List;
 
-public class FoodPlace implements Comparable<FoodPlace> {
-    private String foodPlaceName;
+@Entity
+public class FoodPlace  {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-    private Enum<FoodPlaceType> type;
-    private Set<Reservation> reservations;
+    @NotBlank
+    private String title;
+    @NotBlank
+    private int capacity;
+    @NotBlank
+    private String address;
 
-    {
-        reservations = new HashSet<>();// надо будет прописать компаратор, чтоб даты резерваций выводился в порядке
-        // возрастания по дате и времени
+    @OneToMany(mappedBy ="foodPlace" ,cascade = CascadeType.ALL)
+    private List<Reservation> reservation;
+
+    @ManyToOne
+    private FoodPlaceType foodPlaceType;
+
+    public List<Reservation> getReservation() {
+        return reservation;
     }
 
-
-    public FoodPlace(String foodPlaceName, Enum<FoodPlaceType> type) {
-        this.foodPlaceName = foodPlaceName;
-        this.type = type;
+    public void setReservation(List<Reservation> reservation) {
+        this.reservation = reservation;
     }
 
-
-    public String getFoodPlaceName() {
-        return foodPlaceName;
+    public FoodPlace() {
     }
 
-    // Прописал компаратор, чтоб заведения в правильном порядке были в TreeSet
-    @Override
-    public int compareTo(FoodPlace foodPlace) {
-        return foodPlaceName.compareTo(foodPlace.getFoodPlaceName());
+    public FoodPlace(String title, int capacity, String address) {
+        this.title = title;
+        this.capacity = capacity;
+        this.address = address;
     }
 
-    public void addReservationToTheList(Reservation reservation){
-        this.reservations.add(reservation);
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getId() {
+        return id;
     }
 }
