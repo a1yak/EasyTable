@@ -149,6 +149,7 @@ object{
     margin-top: 130px;
     display: flex;
     justify-content: center;
+    
 }
 
 .nav{
@@ -166,53 +167,109 @@ img{
     display: inline-block;
     vertical-align: top;
     align-items: center;
-    margin: 0 55px;
+    margin: 0 59px;
 }
 
 .nav_link1{
     color: #333;
-    font-size: 40px;
+    
     font-weight: bold;
     display: inline-block;
     vertical-align: top;
     align-items: center;;
-    margin: 0;
+    margin: 0px;
+    padding-right: 145px;
+    
+}
+
+.nav_link1w{
+    color: #333;
+    font-size: 25px;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: top;
+    align-items: center;;
+    margin: 0px;
+    padding-right: 85px;
+    padding-left: 25px;
 }
 
 .nav_link2{
     color: #333;
-    font-size: 40px;
+   
     font-weight: bold;
     display: inline-block;
     vertical-align: top;
     align-items: center;
     margin: 0;
-    padding-left: 145px;
     
+    padding-right: 67px;    
+    
+}
+.nav_link2w{
+    color: #333;
+   font-size: 25px;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: top;
+    align-items: center;
+    margin: 0;
+    padding-left: 60px;
+    margin-right: 55px;
+    padding-right: 53px;
+       
 }
 
 .nav_link3{
     color: #333;
-    font-size: 40px;
+   
     font-weight: bold;
     display: inline-block;
     vertical-align: top;
     align-items: center;
     margin: 0;
-    padding-left: 120px;
+    padding-right: 75px;
+    padding-left: 35px;
+   
      
+}
+.nav_link3w{
+    color: #333;
+    font-size: 25px;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: top;
+    align-items: center;
+    margin: 0;
+    padding-right: 75px;
+    margin-left: 30px;
+   
 }
 
 
 .nav_link4{
     color: #333;
-    font-size: 40px;
+    
     font-weight: bold;
     display: inline-block;
     vertical-align: top;
     align-items: center;
     margin: 0;
-    padding-left: 175px;
+    padding-right: 45px;
+    padding-left: 65px;
+    
+}
+
+.nav_link4w{
+    color: #333;
+    font-size: 25px;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: top;
+    align-items: center;
+    margin: 0;
+    padding-right: 35px;
+    padding-left: 35px;
     
 }
 
