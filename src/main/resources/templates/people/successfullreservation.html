@@ -24,7 +24,7 @@
 <div class="introextra">
     <div class="inner">
 <!--        <p class="psuccess">Successful reservation, have a great time</p>-->
-        <p th:text="${'Congratulations ' + person.getName() + ' ' + person.getSurname() + '!'}">text1</p>
+        <p th:text="${'Congratulations, ' + person.getName() + ' ' + person.getSurname() + '!'}">text1</p>
         <p th:text="${'Your reservation in ' +
     res.getFoodPlace().getTitle() + ' at ' + res.getReservationDate() + ', ' + res.getReservationTime() + ' was successful!'}"> text2</p>
         <p th:text="${'Have a great time!'}">text3</p>
