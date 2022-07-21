@@ -3,7 +3,6 @@ package com.example.easytableapp.Controllers;
 import com.example.easytableapp.Models.Person;
 import com.example.easytableapp.Service.PersonService;
 import com.example.easytableapp.Service.ReservationService;
-import com.example.easytableapp.util.PersonValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,14 +17,13 @@ public class PersonController {
 
     private final PersonService personService;
     private final ReservationService reservationService;
-    private final PersonValidator personValidator;
+
 
 
     @Autowired
-    public PersonController(PersonService personService, ReservationService reservationService, PersonValidator personValidator) {
+    public PersonController(PersonService personService, ReservationService reservationService) {
         this.personService = personService;
         this.reservationService = reservationService;
-        this.personValidator = personValidator;
     }
 
     @GetMapping()

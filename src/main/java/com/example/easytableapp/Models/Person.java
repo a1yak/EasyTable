@@ -12,6 +12,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -30,13 +31,13 @@ public class Person {
     private String surname;
 
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date birthDate;
+    private LocalDate birthDate;
 
     @Email(message="Please enter validate email")
     @NotBlank (message = "Please enter your email")
     private String email;
 
-    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "person", cascade = CascadeType.DETACH)
     private Reservation reservation;
 
 
@@ -44,7 +45,7 @@ public class Person {
         this.reservation = reservation;
     }
 
-    public Person(String name, String surname, Date birthDate, String email) {
+    public Person(String name, String surname, LocalDate birthDate, String email) {
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
@@ -85,11 +86,11 @@ public class Person {
         this.surname = surname;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 

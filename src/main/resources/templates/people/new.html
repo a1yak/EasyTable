@@ -26,7 +26,7 @@
             <input type="text" th:field="*{surname}" placeholder="Enter surname" class="form-control col-4 mb-4" id="surname"/>
             <div class="error" style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">surname error</div>
             <br/>
-            <input type="text" th:field="*{birthDate}" placeholder="Enter birthdate in mm.dd.yyyy format(OPTIONAL)" class="form-control col-4 mb-4" id="birthDate"/>
+            <input type="text" th:field="*{birthDate}" placeholder="Enter birthdate in dd/MM/yyyy format (OPTIONAL)" class="form-control col-4 mb-4" id="birthDate"/>
             <div class="error" style="color: red" th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}">birthday error</div>
             <br/>
             <input type="text" th:field="*{email}" placeholder="Enter email" class="form-control col-4 mb-4" id="email"/>

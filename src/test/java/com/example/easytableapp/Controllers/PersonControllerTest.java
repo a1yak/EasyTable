@@ -553,6 +553,11 @@ class PersonControllerTest {
             }
 
             @Override
+            public Reservation findByReservationTimeAndReservationDateAndFoodPlaceId(LocalTime reservationTime, LocalDate reservationDate, int foodPlaceId) {
+                return null;
+            }
+
+            @Override
             public Reservation findByReservationTimeAndReservationDate(LocalTime reservationTime, LocalDate reservationDate) {
                 return null;
             }
