@@ -98,7 +98,7 @@ object{
   margin-top: 50px;
     font-size: 50px;
     font-weight: bold;
-    text-align: center;   
+    text-align: center;
     flex: auto;
 }
 
@@ -106,13 +106,15 @@ object{
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+
 }
 
 .intro{
+   
     margin-top: 50px;
     font-size: 50px;
     font-weight: bold;
-    text-align: center;   
+    text-align: center;
 }
 
 .introextra{
@@ -167,7 +169,7 @@ img{
   margin-top: 50px;
     font-size: 50px;
     font-weight: bold;
-    text-align: center;   
+    text-align: center;
 }
 
 
@@ -240,7 +242,6 @@ font-family: 'Dancing Script', cursive;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
-    
   }
   
   .btn:hover {background-color: #3e8e41}
